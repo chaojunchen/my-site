@@ -1,0 +1,40 @@
+@import url('../style/varible.less');
+.dialog {
+	max-width: 250px;
+	box-sizing: border-box;
+	padding: 10px;
+	overflow: hidden;
+	word-break: break-all;
+	display: flex;
+	align-items: start;
+	line-height: 30px;
+	box-shadow: 1px 1px 3px 1px #ababa9;
+	border-radius: 10px;
+	color: #fff;
+	position: absolute;
+	transition: 0.5s;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%) translateY(100px);
+	opacity: 0;
+	&-success {
+		background: @success;
+	}
+	&-danger {
+		background: @danger;
+	}
+	&-error {
+		background: @warn;
+	}
+	&-warning {
+		background: @warn;
+	}
+}
+.icon {
+	font-size: 30px;
+	margin-right: 10px;
+	flex: 0 0 auto;
+}
+.text {
+	flex: 1 1 auto;
+}

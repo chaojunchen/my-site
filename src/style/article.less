@@ -1,0 +1,43 @@
+@import url('./varible.less');
+.markdown-preview {
+	h3 {
+		font-size: 25px;
+		font-weight: bold;
+		border-bottom: 1px solid #e4e2e2;
+		margin-bottom: 0;
+		padding-bottom: 15px;
+	}
+	p {
+		padding-left: 1rem;
+		line-height: 1.5em;
+		strong {
+			display: inline-block;
+			padding: 10px 0;
+		}
+	}
+	pre {
+		background: rgb(239, 239, 242);
+		box-sizing: border-box;
+		padding: 10px;
+		line-height: 1.5em;
+		border-radius: 10px;
+	}
+    .console{
+        color: rgb(255, 0, 0);
+    }
+    .class-name{
+        color: @danger;
+    }
+    .function{
+        color: @primary;
+    }
+    .keyword-this{
+        color: rgb(90, 132, 28);
+    }
+    .property-access{
+        color: rgb(12, 137, 137);
+    }
+    .keyword-const{
+        color: rgb(1, 9, 240);
+    }
+}
