@@ -3,6 +3,7 @@ import { getURLParams, random } from "../utils/index.js"
 
 import avatars from "./utils/avatars.js"
 import person from "./utils/person.js"
+import colors from "./utils/colors.js"
 
 // 文章分类。
 Mock.mock(/^\/api\/articleCategory(\?.+)?$/, 'get', function () {
@@ -52,7 +53,7 @@ Mock.mock(/^\/api\/article(\?.+)?$/, 'get', function (options) {
                     description: "@cparagraph(1,8)",
                     'scanNumber|0-50000': 0,
                     "commentNumber|0-500": 0,
-                    "thumb|1": [Mock.Random.image('300x300', '#008c8c', '#E8A615', 'png', 'Game of Thrones'), null],
+                    "thumb|1": [Mock.Random.image('300x300', Mock.Random.color(), '#E8A615', 'jpg', 'Game of Thrones'), null],
                     createTime: Mock.Random.date('yyyy-MM-dd'),
                     category: {
                         "id|1-15": 0,

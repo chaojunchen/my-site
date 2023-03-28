@@ -4,8 +4,8 @@
       ref="wrap"
       v-loading="isLoading">
 
-    <li v-for="(item,i) in data.rows"
-        :key="i">
+    <li v-for="(item) in data.rows"
+        :key="item.id">
       <ArticleItem :data="item"
                    @toDetail="toDetail"
                    @changeCategory="changeCategory" />
@@ -30,8 +30,7 @@ import mainScrollToBus from '../../../mixin/mainScrollToBus'
 import { getArticleList } from '@/api/article.js'
 import ArticleItem from './ArticleItem.vue'
 import Pager from '@/components/Pager.vue'
-import { debounce } from '@/utils/index'
-export default {
+ export default {
   data() {
     return {
       visiblePage: 10, //分页组件可见页码
@@ -63,6 +62,7 @@ export default {
       })
 
       this.totalData = result.total
+      this.data = {}
       return result
     },
     // 页码改变，请求新的一页。

@@ -3,7 +3,7 @@
     <div class="thumb"
          @click="toDetail(data.category.id)"
          v-if="data.thumb">
-      <img :src="data.thumb"
+      <img v-lazy="data.thumb"
            alt="">
     </div>
     <div class="main">
@@ -32,7 +32,7 @@ export default {
       this.$emit('changeCategory', newCate)
     },
     toDetail(id) {
-        this.$emit("toDetail",id)
+      this.$emit('toDetail', id)
     },
   },
 }

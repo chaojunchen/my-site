@@ -5,5 +5,5 @@ import "./article.js"
 import { random } from "../utils/index.js"
 
 Mock.setup({
-    timeout: random(400, 2500)
+    timeout: random(400, 4300)
 })

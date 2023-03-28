@@ -1,6 +1,16 @@
 <template>
   <div id="app">
-    <Layout>
+    <div>
+      <aVue />
+    </div>
+    <div>
+      <bVue />
+    </div>
+
+    <button @click="increase">增加</button>
+    <button @click="decrease">减少</button>
+
+    <!-- <Layout>
       <template #left>
         <div class="left">
           <LeftMenu />
@@ -13,7 +23,7 @@
         </div>
       </template>
     </Layout>
-    <ToTop />
+    <ToTop /> -->
   </div>
 </template>
 
@@ -21,6 +31,9 @@
 import Layout from './components/Layout.vue'
 import LeftMenu from './components/LeftMenu/index.vue'
 import ToTop from './components/ToTop.vue'
+import aVue from './a.vue'
+import bVue from './b.vue'
+
 export default {
   data() {
     return {
@@ -31,7 +44,19 @@ export default {
     ToTop,
     Layout,
     LeftMenu,
+    aVue,
+    bVue,
   },
+  methods: {
+    increase() {
+      this.$store.dispatch('asyncIncrease')
+    },
+    decrease() {
+      this.$store.dispatch('asyncDecrease')
+    },
+
+  },
+
 }
 </script>
 
@@ -41,7 +66,7 @@ export default {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  display: flex;
+  //   display: flex;
 
   .left {
     width: 250px;
